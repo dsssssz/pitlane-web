@@ -1,0 +1,9 @@
+node_modules/
+client/node_modules/
+client/dist/
+data/*.sqlite
+data/*.sqlite-*
+.DS_Store
+.env
+*.log
+playwright-report/

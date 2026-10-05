@@ -1,0 +1,28 @@
+{
+  "name": "pitlane-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PITLANE — веб-паспорт машины, лог круга, дельта, экипаж, дуэль",
+  "scripts": {
+    "dev": "concurrently -n server,client -c white,green \"npm run server\" \"npm run client\"",
+    "server": "node server/index.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "start": "NODE_ENV=production node server/index.js",
+    "seed": "node server/seed.js",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "fast-xml-parser": "^4.5.1",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^3.3.8",
+    "concurrently": "^9.1.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1"
+  }
+}
