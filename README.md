@@ -52,6 +52,20 @@ npm start
 - Если круги не нашлись, но трасса длинная — один круг целиком  
 - Fallback: ручной ввод `m:ss.mmm` или CSV  
 
+
+## Публичный URL
+
+**https://pitlane-web.pitlane-taksimaga.workers.dev**
+
+Провайдер: Cloudflare Workers + KV (assets SPA).  
+Вход: `/auth` → `demo@pitlane.local` → «Получить ссылку» → «Открыть magic link».
+
+Деплой:
+```bash
+npm run build
+npx wrangler deploy
+```
+
 ## Ограниции MVP
 
 - Нет реального SMTP (magic link в UI)  
