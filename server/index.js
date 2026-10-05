@@ -83,7 +83,8 @@ app.post('/api/auth/request', (req, res) => {
     email,
     expires
   );
-  const base = process.env.PUBLIC_URL || `${req.protocol}://${req.get('host')}`;
+  const origin = req.get('origin');
+  const base = process.env.PUBLIC_URL || origin || `${req.protocol}://${req.get('host')}`;
   // In MVP without SMTP we return the link so the UI can show it.
   const magicUrl = `${base.replace(/\/$/, '')}/auth/verify?token=${token}`;
   res.json({
